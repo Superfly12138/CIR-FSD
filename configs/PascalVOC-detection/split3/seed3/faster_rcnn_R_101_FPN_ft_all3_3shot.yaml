@@ -1,0 +1,57 @@
+DATASETS:
+  TEST: !!python/tuple
+  - voc_2007_test_all3
+  TRAIN: !!python/tuple
+  - voc_2007_trainval_all3_3shot_seed3
+INPUT:
+  CROP:
+    ENABLED: true
+  MIN_SIZE_TEST: 800
+  MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
+MODEL:
+  BACKBONE:
+    FREEZE: false
+    FREEZE_AT: 5
+  MASK_ON: false
+  PROPOSAL_GENERATOR:
+    FREEZE: false
+  RESNETS:
+    DEPTH: 101
+  ROI_BOX_HEAD:
+    CONTRASTIVE_BRANCH:
+      DECAY:
+        ENABLED: true
+        RATE: 0.5
+        STEPS:
+        - 800
+        - 1000
+      IOU_THRESHOLD: 0.8
+      LOSS_WEIGHT: 0.5
+      TEMPERATURE: 0.2
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 256
+    FREEZE_FEAT: false
+    IOU_THRESHOLDS:
+    - 0.4
+    NAME: ContrastiveROIHeads
+    NUM_CLASSES: 20
+    OUTPUT_LAYER: CosineSimOutputLayers
+  RPN:
+    POST_NMS_TOPK_TRAIN: 2000
+  WEIGHTS: checkpoints/s3-0.3-70000-CEM-minitrain.pth
+OUTPUT_DIR: ./checkpoints/voc/faster_rcnn/seed3/faster_rcnn_R_101_FPN_ft_all3_3shot
+SOLVER:
+  BASE_LR: 0.005
+  CHECKPOINT_PERIOD: 1200
+  GAMMA: 0.1
+  IMS_PER_BATCH: 4
+  MAX_ITER: 1200
+  STEPS: !!python/tuple
+  - 800
+  - 1000
+  - 1200
+  - 1200
+  WARMUP_ITERS: 10
+TEST:
+  EVAL_PERIOD: 50000
+_BASE_: ../../../Base-RCNN-FPN.yaml

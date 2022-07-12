@@ -1,0 +1,31 @@
+DATASETS:
+  TEST: !!python/tuple
+  - voc_2007_test_all1
+  TRAIN: !!python/tuple
+  - voc_2007_trainval_all1_3shot_seed1
+INPUT:
+  MIN_SIZE_TEST: 800
+  MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
+MODEL:
+  MASK_ON: false
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    NUM_CLASSES: 20
+  WEIGHTS: checkpoints/R-101.pkl
+OUTPUT_DIR: ./checkpoints/voc/faster_rcnn/seed1/faster_rcnn_R_101_FPN_ft_all1_3shot
+SOLVER:
+  BASE_LR: 0.005
+  CHECKPOINT_PERIOD: 800
+  GAMMA: 0.1
+  IMS_PER_BATCH: 4
+  MAX_ITER: 800
+  STEPS: !!python/tuple
+  - 400
+  - 800
+  - 800
+  - 800
+  WARMUP_ITERS: 10
+TEST:
+  EVAL_PERIOD: 50000
+_BASE_: ../../../Base-RCNN-FPN.yaml

@@ -1,0 +1,45 @@
+DATASETS:
+  TEST: !!python/tuple
+  - voc_2007_test_all4
+  TRAIN: !!python/tuple
+  - voc_2007_trainval_all4_10shot_seed6
+INPUT:
+  CROP:
+    ENABLED: true
+  MIN_SIZE_TEST: 800
+  MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
+MODEL:
+  BACKBONE:
+    FREEZE: false
+    FREEZE_AT: 5
+  MASK_ON: false
+  PROPOSAL_GENERATOR:
+    FREEZE: false
+  RESNETS:
+    DEPTH: 101
+  ROI_HEADS:
+    BATCH_SIZE_PER_IMAGE: 256
+    FREEZE_FEAT: false
+    IOU_THRESHOLDS:
+    - 0.4
+    NUM_CLASSES: 20
+    OUTPUT_LAYER: CosineSimOutputLayers
+  RPN:
+    POST_NMS_TOPK_TRAIN: 2000
+  WEIGHTS: checkpoints/s4-70000.pth
+OUTPUT_DIR: ./checkpoints/voc/faster_rcnn/seed6/faster_rcnn_R_101_FPN_ft_all4_10shot
+SOLVER:
+  BASE_LR: 0.005
+  CHECKPOINT_PERIOD: 2500
+  GAMMA: 0.1
+  IMS_PER_BATCH: 4
+  MAX_ITER: 2500
+  STEPS: !!python/tuple
+  - 1500
+  - 2100
+  - 2500
+  - 2500
+  WARMUP_ITERS: 10
+TEST:
+  EVAL_PERIOD: 50000
+_BASE_: ../../../Base-RCNN-FPN.yaml

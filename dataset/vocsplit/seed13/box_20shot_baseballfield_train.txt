@@ -1,0 +1,11 @@
+datasets/VOC2007/JPEGImages/01439.jpg
+datasets/VOC2007/JPEGImages/08191.jpg
+datasets/VOC2007/JPEGImages/04614.jpg
+datasets/VOC2007/JPEGImages/06727.jpg
+datasets/VOC2007/JPEGImages/00365.jpg
+datasets/VOC2007/JPEGImages/03589.jpg
+datasets/VOC2007/JPEGImages/04133.jpg
+datasets/VOC2007/JPEGImages/05049.jpg
+datasets/VOC2007/JPEGImages/09225.jpg
+datasets/VOC2007/JPEGImages/03986.jpg
+datasets/VOC2007/JPEGImages/08682.jpg

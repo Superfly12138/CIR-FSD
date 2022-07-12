@@ -1,0 +1,1 @@
+datasets/VOC2007/JPEGImages/10348.jpg

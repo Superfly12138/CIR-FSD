@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: FsDet
+Version: 0.1
+Summary: A repository for few-shot object detection.
+Home-page: https://github.com/ucbdrive/few-shot-object-detection
+Author: BDD
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Provides-Extra: all

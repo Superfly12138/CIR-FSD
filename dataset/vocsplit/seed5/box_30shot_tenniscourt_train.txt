@@ -1,0 +1,14 @@
+datasets/VOC2007/JPEGImages/05573.jpg
+datasets/VOC2007/JPEGImages/01027.jpg
+datasets/VOC2007/JPEGImages/11187.jpg
+datasets/VOC2007/JPEGImages/07807.jpg
+datasets/VOC2007/JPEGImages/02548.jpg
+datasets/VOC2007/JPEGImages/06237.jpg
+datasets/VOC2007/JPEGImages/11654.jpg
+datasets/VOC2007/JPEGImages/09590.jpg
+datasets/VOC2007/JPEGImages/06859.jpg
+datasets/VOC2007/JPEGImages/09855.jpg
+datasets/VOC2007/JPEGImages/05760.jpg
+datasets/VOC2007/JPEGImages/10782.jpg
+datasets/VOC2007/JPEGImages/10720.jpg
+datasets/VOC2007/JPEGImages/04204.jpg

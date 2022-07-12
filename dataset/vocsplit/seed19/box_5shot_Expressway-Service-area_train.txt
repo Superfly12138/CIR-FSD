@@ -1,0 +1,3 @@
+datasets/VOC2007/JPEGImages/07848.jpg
+datasets/VOC2007/JPEGImages/05333.jpg
+datasets/VOC2007/JPEGImages/05638.jpg
