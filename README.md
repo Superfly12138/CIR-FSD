@@ -6,9 +6,9 @@ This repo contains the implementation of our *state-of-the-art* few-shot object 
 
 ![FSCE Figure](CIR-FSD.png)
 
-![pic-1](/Users/superfly/Downloads/CIR-FSD/demo/pic-1.jpg)
+![pic-1](demo/pic-1.jpg)
 
-![pic-2](/Users/superfly/Downloads/CIR-FSD/demo/pic-2.jpg)
+![pic-2](demo/pic-2.jpg)
 
 
 ## Installation
